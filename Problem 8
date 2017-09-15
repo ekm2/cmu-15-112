@@ -1,0 +1,26 @@
+8. longestIncreasingRun(n)
+Write the function longestIncreasingRun that takes in a positive int value n and returns the longest increasing run of digits. For example longestIncreasingRun(1232) would return 123 and longestIncreasingRun(27648923679) returns 23679. If there is a tie in run length, the larger of the two runs should be returned. So longestIncreasingRun(123345) would return 345
+
+Solution.
+
+def longestIncreasingRun(n):
+    """Takes in a positive int value n 
+    Returns the longest increasing run of digits"""
+    if n<0:
+      print("Invalid input")
+      
+    result=""
+    for i in range(n+1):
+        
+      while i<i+1:
+        result +=i 
+        
+    return result 
+    
+ #Test the function   
+def longestIncreasingRunTest():
+    assert 'longestIncreasingRun(1232)==123'
+    assert 'longestIncreasingRun(27648923679)==23679'
+    assert 'longestIncreasingRun(123345)== 345'
+    print("Passed!") 
+    
