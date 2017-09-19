@@ -1,0 +1,39 @@
+nthPalindromicPrime(n)
+Write the function nthPalindromicPrime(n).  So nthPalindromicPrime(0) returns 2, and nthPalindromicPrime(10) returns 313
+
+def isPalindrome(n):
+  """Inputs an integer.
+  Returns a boolean showing if its a palindrome"""
+  return str(n)==str(n)[::-1]
+def isPrime(n):
+  """Inputs an integer.
+  Returns a boolean showing if it is a prime."""
+  if n<2:
+    return False
+  if n==2:
+    return True 
+  if n%2==0:
+    return False
+  maxFactor=round(n**0.5)
+  for factor in range(3,maxFactor+1,2):
+    if n%factor==0:
+      return False 
+    return True 
+    
+def genPalindromicPrime(n):
+  """Inputs an integer .
+  Generates palindromic primes less than or equal to n"""
+  result=""
+  for factor in range(n+1):
+    if isPrime(factor) and isPalindrome(factor):
+      result +=factor 
+  return result 
+def nthPalindromicPrime(n):
+   """Checks for palindromic primes less than 1000."""
+   if n>1000:
+     return False 
+   result=genPalindromicPrime(1000)
+   
+   return result[n]
+    
+  
