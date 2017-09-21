@@ -1,0 +1,67 @@
+#9.Write the function nthLeftTruncatablePrime(n).So nthLeftTruncatablePrime(0) returns 2, and nthLeftTruncatablePrime(10) returns 53.
+
+def isPrime(n):
+  """Takes an integer.
+  Returns a boolean determining whether or not it is prime."""
+  if n<2:
+    return False
+  if n==2:
+    return True 
+  if n%2==0:
+    return False 
+  maxFactor=round(n**0.5)
+  for factor in range(3,maxFactor +2):
+    if n%factor==0:
+      return False 
+  return True 
+def isTruncatablePrime(n):
+  """Inputs an integer.
+  Returns a boolean that determines whether the number is a truncatable prime(has no zeros and is prime)."""
+  for digit in n:
+    if digit==0:
+      return False 
+  return True 
+def isTruncatablePrimeTest():
+  assert 'isTruncatablePrime(103)==False'
+  assert 'isTruncatablePrime(107)==False'
+  assert 'isTruncatablePrime(109)==False'
+  assert 'isTruncatablePrime(313)==True'
+  assert 'isTruncatablePrime(2)==True'
+  print("Passed!")
+  
+#isTruncatablePrimeTest() 
+
+def reverse_number(n):
+  """Takes an integer.Returns a reverse  integer."""
+  r=0 
+  while n>0:
+    r *=10 
+    r +=n%10 
+    n  //=10
+  return r 
+  
+def reverse_numberTest():
+  assert 'reverse_number(10)==1'
+  assert 'reverse_number(313)==313'
+  assert 'reverse_number(123)==321'
+  print("Passed!")
+#reverse_numberTest()
+
+def isLeftTruncatablePrime(n):
+    """Takes an integer.
+    Returns a boolean that that determines if it is prime,and upon truncating the leftmost digit it will 
+    still be prime."""
+    if isPrime(n):
+      while n>0:
+        return isPrime(reverse_number(reverse_number(n)%10))  
+def isLeftTruncatablePrimeTest():
+  assert 'isLeftTruncatablePrime(9137)==True'
+  assert 'isLeftTruncatablePrime(797)==True'
+  assert 'isLeftTruncatablePrime(2)==True'
+  assert 'isLeftTruncatablePrime(9034)==False'
+  assert 'isLeftTruncatablePrime(7393)==False'
+  print("Passed!")
+
+isLeftTruncatablePrimeTest()  
+
+TO BE CONTINUED....
