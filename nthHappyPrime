@@ -1,0 +1,59 @@
+Check is a number is a Happy prime(A happy number is a number defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits in base-ten, and repeat the process until the number either equals 1 (where it will stay), or it loops endlessly in a cycle that does not include 1. Those numbers for which this process ends in 1 are happy numbers, while those that do not end in 1 are unhappy numbers (or sad numbers).
+
+def sumOfSquaresOfDigits(n):
+  """Takes a non negative integer.
+  Returns the sum of squares of its digits."""
+  result=0 
+  while n>0:
+    leftDigit=n%10
+    n //=10
+    result+=leftDigit**2 
+  return result 
+def sumOfSquaresOfDigitsTest():
+  assert 'sumOfSquaresOfDigits(5)==25'
+  assert 'sumOfSquaresOfDigits(12)==5'
+  assert 'sumOfSquaresOfDigits(234)==29'
+  print("Passed!")
+#sumOfSquaresOfDigitsTest()
+
+def isHappyNumber(n):
+  """Takes a possibly negative integer.
+  Returns True if it is happy and False otherwise."""
+  n=abs(n)
+  while n>0 and n<10:
+    n=sumOfSquaresOfDigits(n)
+  return n==1 
+def isHappyNumberTest():
+  assert 'isHappyNumber(-7) == False'
+  assert 'isHappyNumber(1) == True'
+  assert 'isHappyNumber(2) == False'
+  assert' isHappyNumber(97) == True'
+  assert 'isHappyNumber(98) == False'
+  assert 'isHappyNumber(404) == True'
+  assert 'isHappyNumber(405) == False'
+  print("Passed!")
+
+#isHappyNumberTest()
+
+def nthHappyNumber(n):
+  """Takes a non-negative integer and returns the nth happy number (where the 0th happy number is 1).
+  Calculates happy numbers  less than 1000"""
+  result=""
+  for i in range(1000):
+     if isHappyNumber(i):
+        result +=i
+  for count in result:
+     if int(count)==n:
+       return result[int(count)]
+def nthHappyNumberTest():
+  assert'nthHappyNumber(0) == 1'
+  assert'nthHappyNumber(1) == 7'
+  assert'nthHappyNumber(2) == 10'
+  assert 'nthHappyNumber(3) == 13'
+  assert'nthHappyNumber(4) == 19'
+  assert 'nthHappyNumber(5) == 23'
+  assert 'nthHappyNumber(6) == 28'
+  assert 'nthHappyNumber(7) == 31'
+  print("Passed!")
+#nthHappyNumberTest()
+TO BE CONTiNUED
