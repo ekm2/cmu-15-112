@@ -1,5 +1,19 @@
-Check is a number is a Happy prime(A happy number is a number defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits in base-ten, and repeat the process until the number either equals 1 (where it will stay), or it loops endlessly in a cycle that does not include 1. Those numbers for which this process ends in 1 are happy numbers, while those that do not end in 1 are unhappy numbers (or sad numbers).
-
+A happy prime is a number that is both happy and prime.Find the nthHappy prime.
+def isPrime(n):
+  """Takes an integer.Returns a boolean indicating whether or not its prime."""
+  n=abs(n)
+  if n<2:
+    return False 
+  if n==2:
+    return True 
+  if n%2==0:
+    return False 
+  maxFactor=round(n**0.5)
+  for factor in range(3,maxFactor+1,2):
+    if n%factor==0:
+      return False 
+  return True 
+  
 def sumOfSquaresOfDigits(n):
   """Takes a non negative integer.
   Returns the sum of squares of its digits."""
@@ -56,4 +70,11 @@ def nthHappyNumberTest():
   assert 'nthHappyNumber(7) == 31'
   print("Passed!")
 #nthHappyNumberTest()
-TO BE CONTiNUED
+def nthHappyPrime(n):
+   return isPrime(nthHappyNumber(n))
+def nthHappyPrimeTest():
+  assert 'nthHappyPrime(0)==7'
+  assert 'nthHappyPrime(1)==13'
+  assert 'nthHappyPrime(2)==19'
+  print("Passed!")
+#nthHappyPrimeTest()
