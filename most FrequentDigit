@@ -1,0 +1,36 @@
+Write the function mostFrequentDigit(n), that takes a non-negative integer n and returns the digit from 0 to 9 that occurs most frequently in it, with ties going to the smaller digit.
+
+
+
+def digitCount(n):
+  """Count the maximum number count."""
+  count=0 
+  while n>0:
+    leftDigit=n%10
+    count +=1 
+    n/=10
+  return count 
+  
+def digitCountTest():
+  assert 'digitCount(12323)==5'
+  assert 'digitCount(0)==1'
+  assert 'digitCount(-111)==3'
+  print("Passed!")
+  
+#digitCountTest()
+def mostFrequentDigit(n):
+  """Takes a non-negative integer n and returns the digit from 0 to 9 that occurs most frequently in it, with ties going to the smaller digit."""
+  maxNum=0 
+  maxCount=0 
+    
+  for i in n:
+    if digitCount(i)>maxCount:
+      maxNum=i 
+  return maxNum
+  
+def mostFrequentDigitTest():
+  assert 'mostFrequentDigit(123110)==1'
+  assert 'mostFrequentDigit(112334)==1'
+  print("Passed!")
+
+mostFrequentDigitTest()
