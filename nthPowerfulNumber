@@ -1,5 +1,5 @@
 def nthPowerfulNumber(n):
-  """Write the function nthPowerfulNumber(n).A powerful number is a positive integer m such that for every prime number p dividing m, p2 also divides m. Equivalently, a powerful number is the product of a square and a cube, that is, a number m of the form m = a2b3, where a and b are positive integers."""
+  """Write the function nthPowerfulNumber(n).A powerful number is a positive integer m such that for every prime number p dividing m, p2 also divides m. Equivalently, a powerful number is the product of a square and a cube, that is, a number m of the form m = a**2b**3, where a and b are positive integers."""
   
   return result[n]
 def nthPowerfulNumberTest():
