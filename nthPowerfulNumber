@@ -1,0 +1,37 @@
+def nthPowerfulNumber(n):
+  """Write the function nthPowerfulNumber(n).A powerful number is a positive integer m such that for every prime number p dividing m, p2 also divides m. Equivalently, a powerful number is the product of a square and a cube, that is, a number m of the form m = a2b3, where a and b are positive integers."""
+  
+  return result[n]
+def nthPowerfulNumberTest():
+  assert 'nthPowerfulNumber(0)==1'
+  assert 'nthPowerfulNumber(1)==4'
+  assert 'nthPowerfulNumber(2)==8'
+  assert 'nthPowerfulNumber(10)==64'
+  print("Passed!")
+  
+nthPowerfulNumberTest()
+def isPrime(n):
+  """Inputs an integer.Determines if it is prime."""
+  n=abs(n)
+  if n<2:
+    return false 
+  if n==2:
+    return True 
+  if n%2==0:
+    return False 
+  maxFactor=round(n**0.5)
+  for factor in range(3,maxFactor +1,2):
+    if n%factor==0:
+      return False 
+  return True 
+  
+  
+def findPowerfulNumber():
+  
+  """Calculates the powerful numbers less than 1000."""
+  
+  result=""
+  for i in range(1000):
+    if  isPrime(i):
+      if n%i==0 and n%(i*i)==0:
+        result +=i 
