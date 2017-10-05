@@ -1,0 +1,19 @@
+Write the function nthCircularPrime that takes a non-negative int n and returns the nth Circular prime, which is a prime number that does not contain any 0's and such that all the numbers resulting from rotating its digits are also prime. The first Circular primes are 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, 97, 113, 131, 197... To see why 197 is a Circular prime, note that 197 is prime, as is 971 (rotated left), as is 719 (rotated left again).
+
+def noZeros(n):
+   """Inputs an integer .
+   Returns True if the integer  has no zeros.False if it has zeros."""
+   for  i in n:
+     if int(n)==0:return False 
+   return True 
+def noZerosTest():
+  assert 'noZeros(1023)==False'
+  assert 'noZeros(123)==True'
+  assert 'noZeros(123056)==False'
+  print("Passed!")
+
+#noZerosTest()
+
+def rotateNum(n):
+  rotate=n 
+  return int(str(rotate)[1:] + str(rotate)[0])
