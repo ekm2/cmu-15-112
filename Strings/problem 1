@@ -1,0 +1,15 @@
+Question 1:
+
+vowelCount(s)
+Write the function vowelCount(s), that takes a string s, and returns the number of vowels in s, ignoring case, so "A" and "a" are both vowels. The vowels are "a", "e", "i", "o", and "u". So, for example, ("Abc def!!! a? yzyzyz!") returns 3 (two a's and one e).
+
+def voWelCount(s):
+    """Function that takes a string s,and returns the number of vowels in s,ignoring case."""
+    vowels="a,e,i,o,u"
+    count=0
+    for i in s:
+        if i in vowels.lower() or i in vowels.upper():
+            count+=1
+    return count
+
+print(voWelCount("Abc def!!! a? yzyzyz!"))
