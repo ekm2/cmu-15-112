@@ -1,0 +1,14 @@
+def hasBalancedParentheses(s):
+    """Write the function hasBalancedParentheses, which takes a string and returns True if that code has balanced parentheses and False otherwise (ignoring all non-parentheses in the string)."""
+    while i in s:
+        if i=="(":
+            return (")" in s[i:])
+        else:
+            return False
+def testHasBalancedParentheses():
+    assert 'hasBalancedParentheses("( ( ( ) ( ) ) ( ) )")==True'
+    assert' hasBalancedParentheses("( ) )")==False'
+    assert 'hasBalancedParentheses(  "( ) ) (" )==False'
+    print("Yay!")
+            
+testHasBalancedParentheses()
